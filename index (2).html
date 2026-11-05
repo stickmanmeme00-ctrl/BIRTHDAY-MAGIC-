@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#160d2b">
+  <title>Birthday Magic ✨</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#fff;
+      background:radial-gradient(circle at top,#48205f 0,#1c1235 48%,#100b20 100%);min-height:100vh}
+    .gate{min-height:100vh;display:grid;place-items:center;padding:24px}
+    .gate-card{width:min(440px,100%);text-align:center;padding:34px 25px;border:1px solid #ffffff30;
+      border-radius:26px;background:#ffffff12;backdrop-filter:blur(12px);box-shadow:0 18px 60px #0006}
+    .emoji{font-size:48px}
+    h1{font-size:clamp(2rem,8vw,3rem);margin:10px 0;color:#ffd5f4}
+    p{color:#f0dff2;line-height:1.6}
+    input{width:100%;padding:15px;border-radius:14px;border:1px solid #ffffff55;background:#160d2b;color:white;
+      font-size:20px;text-align:center;letter-spacing:8px;outline:none;margin:12px 0}
+    button{border:0;border-radius:14px;padding:14px 24px;background:linear-gradient(90deg,#ff70bd,#a78bfa);
+      color:#210d2c;font-weight:800;font-size:16px;cursor:pointer}
+    #error{color:#ffb4c2;min-height:24px}
+    .hidden{display:none!important}
+    header{text-align:center;padding:48px 18px 22px}
+    header h1{margin-bottom:6px}
+    .sub{font-size:1.08rem}
+    .gallery{width:min(1050px,92%);margin:22px auto 60px;display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px}
+    .photo{margin:0;padding:9px;border-radius:20px;background:#ffffff16;border:1px solid #ffffff25;
+      box-shadow:0 12px 30px #0004;overflow:hidden}
+    .photo img{display:block;width:100%;height:310px;object-fit:cover;border-radius:14px;cursor:zoom-in}
+    .caption{text-align:center;padding:10px 5px 4px;color:#ffe1f4}
+    footer{text-align:center;padding:0 15px 35px;color:#d9c4e8}
+    .sparkle{position:fixed;pointer-events:none;opacity:.65;animation:float 7s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-22px) rotate(18deg)}}
+    .lightbox{position:fixed;inset:0;background:#080510ed;display:grid;place-items:center;padding:18px;z-index:5}
+    .lightbox img{max-width:95vw;max-height:85vh;object-fit:contain;border-radius:12px}
+    .close{position:absolute;right:20px;top:18px;background:#fff;color:#21152c;padding:10px 15px}
+  </style>
+</head>
+<body>
+  <div class="sparkle" style="top:8%;left:8%;font-size:25px">✨</div>
+  <div class="sparkle" style="top:22%;right:9%;font-size:30px;animation-delay:1s">💖</div>
+
+  <section class="gate" id="gate">
+    <div class="gate-card">
+      <div class="emoji">🎂💖</div>
+      <h1>Birthday Magic</h1>
+      <p>Ek chhota sa surprise tumhara intezaar kar raha hai.<br>Andar aane ke liye password daalo ✨</p>
+      <form id="login">
+        <input id="password" type="password" inputmode="numeric" maxlength="4" placeholder="••••" aria-label="Password" required>
+        <button type="submit">Open Surprise ✨</button>
+      </form>
+      <div id="error" role="alert"></div>
+    </div>
+  </section>
+
+  <main id="content" class="hidden">
+    <header>
+      <div class="emoji">🎉🎈💝</div>
+      <h1>Birthday Memories</h1>
+      <p class="sub">Kuch pyaari tasveerein, kuch khoobsurat yaadein ❤️</p>
+    </header>
+    <section class="gallery" aria-label="Photo gallery">
+      <figure class="photo"><img src="photos/photo-1.jpg" alt="Birthday memory photo 1"><figcaption class="caption">A special memory 💗</figcaption></figure>
+      <figure class="photo"><img src="photos/photo-2.jpg" alt="Birthday memory photo 2"><figcaption class="caption">Together moments ✨</figcaption></figure>
+      <figure class="photo"><img src="photos/photo-3.png" alt="Birthday memory photo 3"><figcaption class="caption">Cute memories 🥰</figcaption></figure>
+      <figure class="photo"><img src="photos/photo-4.png" alt="Birthday memory photo 4"><figcaption class="caption">Forever memorable 💖</figcaption></figure>
+    </section>
+    <footer>Made with ❤️ and a little bit of magic</footer>
+  </main>
+
+  <div class="lightbox hidden" id="lightbox" role="dialog" aria-modal="true">
+    <button class="close" id="close" aria-label="Close photo">✕</button>
+    <img id="largePhoto" alt="Enlarged memory">
+  </div>
+
+  <script>
+    const correctPassword = "2311";
+    const gate = document.getElementById("gate");
+    const content = document.getElementById("content");
+    document.getElementById("login").addEventListener("submit", function(e) {
+      e.preventDefault();
+      if (document.getElementById("password").value === correctPassword) {
+        gate.classList.add("hidden");
+        content.classList.remove("hidden");
+      } else {
+        document.getElementById("error").textContent = "Password galat hai. Dobara try karo ❤️";
+      }
+    });
+    const lightbox = document.getElementById("lightbox");
+    const largePhoto = document.getElementById("largePhoto");
+    document.querySelectorAll(".photo img").forEach(img => img.addEventListener("click", () => {
+      largePhoto.src = img.src;
+      lightbox.classList.remove("hidden");
+    }));
+    function closePhoto(){lightbox.classList.add("hidden");largePhoto.src="";}
+    document.getElementById("close").addEventListener("click", closePhoto);
+    lightbox.addEventListener("click", e => {if(e.target === lightbox) closePhoto();});
+  </script>
+</body>
+</html>
