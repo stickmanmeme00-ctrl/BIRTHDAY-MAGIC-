@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Shikha ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;min-height:100vh;
+display:flex;justify-content:center;align-items:center;
+padding:20px;text-align:center;color:white;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#180025,#650b69,#24003c);
+}
+.card{
+max-width:450px;width:100%;padding:30px 20px;
+border:1px solid pink;border-radius:25px;
+background:#ffffff15;box-shadow:0 0 30px #ff55c8;
+}
+h1{color:#ffb9e7;font-size:40px;text-shadow:0 0 15px #ff4db8}
+.cake{font-size:100px;animation:bounce 2s infinite}
+@keyframes bounce{50%{transform:translateY(-12px)}}
+p{font-size:17px;line-height:1.7}
+button{
+background:#ff9bd8;color:#68004a;border:0;
+border-radius:30px;padding:15px 25px;
+font-size:17px;font-weight:bold;margin-top:15px;
+}
+#surprise{
+display:none;background:#fff0fa;color:#7c145e;
+padding:20px;border-radius:20px;margin-top:25px;
+}
+.heart{font-size:35px}
+</style>
+</head>
+<body>
+<div class="card">
+<div style="letter-spacing:3px">A SPECIAL SURPRISE 💗</div>
+
+<h1>Happy Birthday<br>Shikha! ❤️</h1>
+
+<div class="cake">🎂</div>
+
+<p>
+May your life be full of happiness,
+love, laughter and beautiful memories.
+You deserve all the best things! 💖
+</p>
+
+<button onclick="showSurprise()">
+🎁 Open Your Surprise
+</button>
+
+<div id="surprise">
+<h2>For You, Shikha 💌</h2>
+<p>
+You are special and you deserve
+every happiness in this world.
+Keep smiling, keep shining
+and never stop dreaming. ❤️
+</p>
+<div class="heart">💗 🌸 💗</div>
+<h2>Lots of Love! 🎉</h2>
+</div>
+</div>
+
+<script>
+function showSurprise(){
+document.getElementById("surprise").style.display="block";
+for(let i=0;i<25;i++){
+let h=document.createElement("div");
+h.innerHTML=["💖","🎉","✨","💗"][Math.floor(Math.random()*4)];
+h.style.cssText="position:fixed;left:"+Math.random()*100+"vw;top:-30px;font-size:30px;animation:fall 4s linear";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),4000);
+}
+}
+</script>
+<style>
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+</style>
+</body>
+</html>
