@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Shikha 💗</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Arial,sans-serif;color:#fff;background:radial-gradient(circle at top,#7b246f 0,#321044 48%,#15051f 100%);display:flex;align-items:center;justify-content:center;padding:22px;overflow-x:hidden}
+.card{width:min(100%,460px);text-align:center;padding:30px 22px 34px;border:1px solid #ffb5e4;border-radius:28px;background:linear-gradient(160deg,rgba(255,255,255,.13),rgba(255,255,255,.04));box-shadow:0 15px 55px #09000e99;backdrop-filter:blur(8px)}
+.tag{letter-spacing:3px;text-transform:uppercase;color:#ffd1ee;font-size:12px}
+h1{font-size:clamp(38px,11vw,58px);margin:12px 0;color:#ffc4e9;text-shadow:0 0 24px #ff5fbd}
+.subtitle{font-size:17px;line-height:1.6;color:#ffe8f6}
+.cake{font-size:92px;margin:20px 0;filter:drop-shadow(0 0 15px #ff8ed1);animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-9px)}}
+button{border:0;border-radius:30px;padding:15px 25px;font-size:16px;font-weight:bold;color:#5a1647;background:linear-gradient(90deg,#ffc1e7,#ff8bcf);box-shadow:0 6px 24px #ff65bf55;cursor:pointer;margin-top:14px}
+.message{display:none;margin-top:24px;padding:20px;border-radius:20px;background:#fff0fa;color:#6b2456;line-height:1.7;animation:appear .7s ease}
+.message h2{margin-top:0;color:#a52c78}
+@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+footer{margin-top:24px;font-size:12px;color:#e9b8da}
+.spark{position:fixed;top:-30px;animation:fall linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(420deg);opacity:0}}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="tag">A little surprise made with love</div>
+  <h1>Happy Birthday,<br>Shikha! 💗</h1>
+  <p class="subtitle">Today is all about you. May your day be filled with smiles, sweet moments and beautiful memories.</p>
+  <div class="cake">🎂</div>
+  <p class="subtitle">Ready for a little birthday magic?</p>
+  <button onclick="openSurprise()">🎁 Open your surprise</button>
+  <section class="message" id="message">
+    <h2>For you, Shikha ✨</h2>
+    <p>May every new day bring you reasons to smile, courage to follow your dreams, and people who make you feel special.</p>
+    <p>Keep shining, keep smiling, and have the loveliest birthday! 🎈</p>
+    <div style="font-size:34px">💖 🌷 🎉</div>
+  </section>
+  <footer>Made especially for Shikha • With lots of good wishes</footer>
+</main>
+<script>
+function openSurprise(){
+  document.getElementById('message').style.display='block';
+  const icons=['💗','✨','🎉','🌸','💖'];
+  for(let i=0;i<24;i++){
+    const s=document.createElement('span');
+    s.className='spark';s.textContent=icons[Math.floor(Math.random()*icons.length)];
+    s.style.left=Math.random()*100+'vw';
+    s.style.animationDuration=(3+Math.random()*4)+'s';
+    s.style.fontSize=(16+Math.random()*18)+'px';
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),7500);
+  }
+}
+</script>
+</body>
+</html>
