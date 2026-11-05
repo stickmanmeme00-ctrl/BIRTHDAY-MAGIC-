@@ -1,378 +1,103 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Shikha ❤️</title>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  background:#050505;color:#f8edcf;
-  font-family:Georgia,serif;overflow-x:hidden;
-}
-:root{--gold:#d8b45a;--light:#ffe9a6;--muted:#bda66d}
-.stars,.stars:before,.stars:after{
-  position:fixed;inset:0;content:"";pointer-events:none;
-  background-image:
-  radial-gradient(2px 2px at 20px 30px,#fff,transparent),
-  radial-gradient(1px 1px at 90px 80px,#e8c76d,transparent),
-  radial-gradient(2px 2px at 160px 130px,#fff,transparent),
-  radial-gradient(1px 1px at 240px 40px,#fff,transparent),
-  radial-gradient(2px 2px at 300px 180px,#e8c76d,transparent);
-  background-size:350px 230px;
-  animation:twinkle 5s infinite alternate;
-  opacity:.45;z-index:0;
-}
-.stars:before{transform:translate(80px,100px);opacity:.5}
-.stars:after{transform:translate(150px,40px);opacity:.4}
-@keyframes twinkle{to{opacity:.9}}
-main{position:relative;z-index:1}
-section{padding:85px 20px;text-align:center}
-.gold{color:var(--gold)}
-.eyebrow{
-  color:var(--gold);letter-spacing:5px;
-  font-size:11px;text-transform:uppercase;margin-bottom:18px
-}
-h1,h2{font-weight:normal}
-h1{font-size:clamp(42px,10vw,76px);line-height:1.1}
-h2{font-size:clamp(30px,7vw,46px);margin-bottom:18px}
-p{line-height:1.8;color:#d4c8a8}
-.hero{
-  min-height:100vh;display:flex;align-items:center;
-  justify-content:center;flex-direction:column;
-  padding:35px 20px;
-  background:radial-gradient(ellipse at center,#30230d 0%,#100d08 38%,#050505 75%);
-}
-.crown{font-size:38px;margin-bottom:20px;animation:float 3s infinite}
-@keyframes float{50%{transform:translateY(-12px)}}
-.hero p{max-width:550px;margin:20px auto 30px}
-button{
-  border:1px solid var(--gold);color:#171006;
-  background:linear-gradient(135deg,#f8df91,#b88b32);
-  padding:14px 25px;border-radius:30px;
-  font-size:14px;letter-spacing:1px;cursor:pointer;
-  transition:.3s;font-family:inherit;
-}
-button:hover{transform:translateY(-3px);box-shadow:0 0 25px #d8b45a55}
-.outline{background:transparent;color:var(--light)}
-.divider{
-  width:90px;height:1px;background:var(--gold);
-  margin:25px auto;opacity:.7
-}
-.card{
-  max-width:720px;margin:25px auto;padding:30px;
-  border:1px solid #b58c3e66;border-radius:18px;
-  background:linear-gradient(145deg,#17130c,#090909);
-  box-shadow:0 15px 45px #0008;
-}
-.letter{
-  display:none;text-align:left;line-height:2;
-  color:#eee0bd;white-space:pre-line;margin-top:25px
-}
-.letter.show{display:block;animation:fade .8s}
-@keyframes fade{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
-.gallery{
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:15px;max-width:750px;margin:30px auto;
-}
-.photo{
-  min-height:220px;border:1px solid #b58c3e66;
-  border-radius:13px;overflow:hidden;position:relative;
-  background:linear-gradient(145deg,#342711,#100d08);
-}
-.photo img{width:100%;height:220px;object-fit:cover;display:block}
-.photo span{
-  display:block;padding:12px;color:var(--light);
-  font-size:13px;letter-spacing:1px
-}
-.photo .placeholder{
-  height:220px;display:flex;align-items:center;
-  justify-content:center;font-size:34px;color:#d8b45a;
-}
-.cake-area{margin:35px auto 10px}
-.cake{position:relative;width:150px;height:125px;margin:auto}
-.cake-base{
-  position:absolute;bottom:0;width:150px;height:65px;
-  background:linear-gradient(#d8b45a,#8c5d1c);
-  border-radius:12px 12px 18px 18px;
-}
-.cake-top{
-  position:absolute;bottom:55px;left:8px;width:134px;height:35px;
-  background:#f1dca9;border-radius:50%;
-}
-.cake-top:after{
-  content:"";position:absolute;top:15px;left:0;
-  width:100%;height:20px;background:#d3a74d;
-  border-radius:0 0 15px 15px;
-}
-.candle{
-  position:absolute;bottom:88px;left:70px;
-  height:32px;width:9px;background:#fff0c5;z-index:2;
-}
-.flame{
-  position:absolute;bottom:118px;left:68px;
-  width:14px;height:20px;background:orange;
-  border-radius:50% 50% 50% 50%;
-  box-shadow:0 0 18px #ffae00;
-  animation:flicker .5s infinite alternate;
-}
-@keyframes flicker{to{transform:scale(.75);opacity:.7}}
-.reasons{
-  max-width:650px;margin:25px auto;
-  display:grid;grid-template-columns:1fr 1fr;gap:12px;
-}
-.reason{
-  padding:18px 12px;border:1px solid #b58c3e55;
-  border-radius:12px;background:#151109;
-  color:#e9d9b2;font-size:14px;line-height:1.6;
-  opacity:0;transform:translateY(10px);
-  transition:.5s;
-}
-.reason.show{opacity:1;transform:none}
-.reason b{display:block;color:var(--gold);margin-bottom:7px}
-.count-number{
-  font-size:85px;color:var(--gold);
-  margin:20px;font-family:Georgia,serif;
-}
-#countdownBox{display:none}
-footer{
-  padding:45px 20px;text-align:center;
-  border-top:1px solid #b58c3e44;color:#ad9a70;
-  font-size:13px;line-height:2;
-}
-.heart{color:#d8b45a;animation:beat 1s infinite}
-@keyframes beat{50%{transform:scale(1.3)}}
-@media(max-width:520px){
-  section{padding:65px 16px}
-  .gallery{gap:10px}
-  .photo,.photo img,.photo .placeholder{min-height:165px;height:165px}
-  .reasons{gap:9px}
-  .reason{font-size:12px;padding:14px 8px}
-  .card{padding:22px 17px}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#160d2b">
+  <title>Birthday Magic ✨</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#fff;
+      background:radial-gradient(circle at top,#48205f 0,#1c1235 48%,#100b20 100%);min-height:100vh}
+    .gate{min-height:100vh;display:grid;place-items:center;padding:24px}
+    .gate-card{width:min(440px,100%);text-align:center;padding:34px 25px;border:1px solid #ffffff30;
+      border-radius:26px;background:#ffffff12;backdrop-filter:blur(12px);box-shadow:0 18px 60px #0006}
+    .emoji{font-size:48px}
+    h1{font-size:clamp(2rem,8vw,3rem);margin:10px 0;color:#ffd5f4}
+    p{color:#f0dff2;line-height:1.6}
+    input{width:100%;padding:15px;border-radius:14px;border:1px solid #ffffff55;background:#160d2b;color:white;
+      font-size:20px;text-align:center;letter-spacing:8px;outline:none;margin:12px 0}
+    button{border:0;border-radius:14px;padding:14px 24px;background:linear-gradient(90deg,#ff70bd,#a78bfa);
+      color:#210d2c;font-weight:800;font-size:16px;cursor:pointer}
+    #error{color:#ffb4c2;min-height:24px}
+    .hidden{display:none!important}
+    header{text-align:center;padding:48px 18px 22px}
+    header h1{margin-bottom:6px}
+    .sub{font-size:1.08rem}
+    .gallery{width:min(1050px,92%);margin:22px auto 60px;display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px}
+    .photo{margin:0;padding:9px;border-radius:20px;background:#ffffff16;border:1px solid #ffffff25;
+      box-shadow:0 12px 30px #0004;overflow:hidden}
+    .photo img{display:block;width:100%;height:310px;object-fit:cover;border-radius:14px;cursor:zoom-in}
+    .caption{text-align:center;padding:10px 5px 4px;color:#ffe1f4}
+    footer{text-align:center;padding:0 15px 35px;color:#d9c4e8}
+    .sparkle{position:fixed;pointer-events:none;opacity:.65;animation:float 7s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-22px) rotate(18deg)}}
+    .lightbox{position:fixed;inset:0;background:#080510ed;display:grid;place-items:center;padding:18px;z-index:5}
+    .lightbox img{max-width:95vw;max-height:85vh;object-fit:contain;border-radius:12px}
+    .close{position:absolute;right:20px;top:18px;background:#fff;color:#21152c;padding:10px 15px}
+  </style>
 </head>
-
 <body>
-<div class="stars"></div>
-<main>
+  <div class="sparkle" style="top:8%;left:8%;font-size:25px">✨</div>
+  <div class="sparkle" style="top:22%;right:9%;font-size:30px;animation-delay:1s">💖</div>
 
-<section class="hero">
-  <div class="crown">♛</div>
-  <div class="eyebrow">A little world made just for you</div>
-  <h1>Happy Birthday<br><span class="gold">Shikha</span></h1>
-  <div class="divider"></div>
-  <p>
-    Tonight, the stars shine a little brighter,
-    because someone as special as you was born.
-  </p>
-  <button onclick="document.getElementById('letterSection').scrollIntoView()">
-    ENTER YOUR SURPRISE ✨
-  </button>
-  <p class="gold" style="font-size:12px;margin-top:35px">
-    MADE WITH LOVE, JUST FOR YOU
-  </p>
-</section>
-
-<section id="letterSection">
-  <div class="eyebrow">A message from my heart</div>
-  <h2>For <span class="gold">You</span> 💌</h2>
-  <p>Some words are too special to be left unsaid.</p>
-  <div class="card">
-    <div style="font-size:38px">✉️</div>
-    <h2 style="font-size:25px;margin:15px 0">A Secret Letter</h2>
-    <button onclick="toggleLetter()" id="letterBtn">OPEN MY LETTER</button>
-    <div class="letter" id="letter">
-Dear Shikha,
-
-Today is all about you. ❤️
-
-I hope your birthday brings you endless happiness,
-beautiful memories and countless reasons to smile.
-
-You are special in your own way, and I hope you
-never forget how much your presence matters.
-
-May every dream you keep in your heart find its way
-towards becoming real.
-
-Keep smiling, keep shining and always be yourself.
-
-Once again, Happy Birthday, Shikha!
-
-With lots of love,
-Someone who wishes the best for you ❤️
+  <section class="gate" id="gate">
+    <div class="gate-card">
+      <div class="emoji">🎂💖</div>
+      <h1>Birthday Magic</h1>
+      <p>Ek chhota sa surprise tumhara intezaar kar raha hai.<br>Andar aane ke liye password daalo ✨</p>
+      <form id="login">
+        <input id="password" type="password" inputmode="numeric" maxlength="4" placeholder="••••" aria-label="Password" required>
+        <button type="submit">Open Surprise ✨</button>
+      </form>
+      <div id="error" role="alert"></div>
     </div>
+  </section>
+
+  <main id="content" class="hidden">
+    <header>
+      <div class="emoji">🎉🎈💝</div>
+      <h1>Birthday Memories</h1>
+      <p class="sub">Kuch pyaari tasveerein, kuch khoobsurat yaadein ❤️</p>
+    </header>
+    <section class="gallery" aria-label="Photo gallery">
+      <figure class="photo"><img src="photos/photo-1.jpg" alt="Birthday memory photo 1"><figcaption class="caption">A special memory 💗</figcaption></figure>
+      <figure class="photo"><img src="photos/photo-2.jpg" alt="Birthday memory photo 2"><figcaption class="caption">Together moments ✨</figcaption></figure>
+      <figure class="photo"><img src="photos/photo-3.png" alt="Birthday memory photo 3"><figcaption class="caption">Cute memories 🥰</figcaption></figure>
+      <figure class="photo"><img src="photos/photo-4.png" alt="Birthday memory photo 4"><figcaption class="caption">Forever memorable 💖</figcaption></figure>
+    </section>
+    <footer>Made with ❤️ and a little bit of magic</footer>
+  </main>
+
+  <div class="lightbox hidden" id="lightbox" role="dialog" aria-modal="true">
+    <button class="close" id="close" aria-label="Close photo">✕</button>
+    <img id="largePhoto" alt="Enlarged memory">
   </div>
-</section>
 
-<section>
-  <div class="eyebrow">Little moments, big memories</div>
-  <h2>Our <span class="gold">Memories</span> 📸</h2>
-  <p>Add your favourite photos in these golden frames.</p>
-
-  <div class="gallery">
-    <div class="photo">
-      <img src="photo1.jpg" alt="Memory 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="placeholder" style="display:none">♡</div>
-      <span>Beautiful Memory 01</span>
-    </div>
-    <div class="photo">
-      <img src="photo2.jpg" alt="Memory 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="placeholder" style="display:none">✧</div>
-      <span>Beautiful Memory 02</span>
-    </div>
-    <div class="photo">
-      <img src="photo3.jpg" alt="Memory 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="placeholder" style="display:none">♡</div>
-      <span>Beautiful Memory 03</span>
-    </div>
-    <div class="photo">
-      <img src="photo4.jpg" alt="Memory 4" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="placeholder" style="display:none">✧</div>
-      <span>Beautiful Memory 04</span>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="eyebrow">Make a wish</div>
-  <h2>A Cake <span class="gold">For You</span> 🎂</h2>
-  <p>One candle, a thousand wishes. This moment is yours.</p>
-  <div class="cake-area">
-    <div class="cake">
-      <div class="cake-base"></div>
-      <div class="cake-top"></div>
-      <div class="candle"></div>
-      <div class="flame" id="flame"></div>
-    </div>
-  </div>
-  <button class="outline" onclick="blowCandle()">MAKE A WISH ✨</button>
-  <p id="wishText" class="gold" style="margin-top:18px"></p>
-</section>
-
-<section>
-  <div class="eyebrow">Ten little reminders</div>
-  <h2>10 Reasons You're <span class="gold">Special</span></h2>
-  <p>Tap below and reveal your little surprises.</p>
-  <div class="reasons" id="reasons">
-    <div class="reason"><b>01 ✨</b>Your beautiful smile.</div>
-    <div class="reason"><b>02 ♡</b>Your unique personality.</div>
-    <div class="reason"><b>03 🌷</b>The way you care.</div>
-    <div class="reason"><b>04 ✨</b>Your little happy moments.</div>
-    <div class="reason"><b>05 ♡</b>Your kind heart.</div>
-    <div class="reason"><b>06 🌙</b>Your beautiful dreams.</div>
-    <div class="reason"><b>07 ✨</b>Your strength.</div>
-    <div class="reason"><b>08 ♡</b>Your lovely laugh.</div>
-    <div class="reason"><b>09 🌷</b>Being wonderfully you.</div>
-    <div class="reason"><b>10 ❤️</b>Simply because you're Shikha.</div>
-  </div>
-  <button onclick="revealReasons()">REVEAL THE REASONS</button>
-</section>
-
-<section>
-  <div class="eyebrow">One last surprise</div>
-  <h2>A Little <span class="gold">Magic</span> ✨</h2>
-  <p>Are you ready for your final birthday surprise?</p>
-  <div class="card">
-    <div style="font-size:42px">🎁</div>
-    <h2 style="font-size:25px;margin:15px 0">The Final Surprise</h2>
-    <button onclick="startCountdown()">UNLOCK YOUR SURPRISE</button>
-    <div id="countdownBox">
-      <div class="count-number" id="countNumber">5</div>
-      <p class="gold">Something special is waiting...</p>
-    </div>
-    <div id="finalMessage" style="display:none;margin-top:20px">
-      <div style="font-size:48px">👑</div>
-      <h2 class="gold" style="font-size:32px">You Are One of a Kind!</h2>
-      <p>May your life always be filled with happiness,
-      love, laughter and golden moments.</p>
-      <p class="gold" style="margin-top:20px;font-size:20px">
-        Happy Birthday, Shikha! ❤️
-      </p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="heart">♥</div>
-  <p>Made with love, especially for Shikha.</p>
-  <p class="gold">A birthday. A memory. A little magic.</p>
-  <p>Forever wishing you happiness ✨</p>
-</footer>
-
-</main>
-
-<script>
-function toggleLetter(){
-  const letter=document.getElementById("letter");
-  const btn=document.getElementById("letterBtn");
-  letter.classList.toggle("show");
-  btn.textContent=letter.classList.contains("show")
-    ?"CLOSE LETTER":"OPEN MY LETTER";
-}
-
-function blowCandle(){
-  document.getElementById("flame").style.display="none";
-  document.getElementById("wishText").textContent=
-    "May all your beautiful wishes come true! ❤️";
-}
-
-let reasonsShown=false;
-function revealReasons(){
-  if(reasonsShown)return;
-  reasonsShown=true;
-  document.querySelectorAll(".reason").forEach((item,index)=>{
-    setTimeout(()=>item.classList.add("show"),index*350);
-  });
-}
-
-let countdownStarted=false;
-function startCountdown(){
-  if(countdownStarted)return;
-  countdownStarted=true;
-  const box=document.getElementById("countdownBox");
-  const number=document.getElementById("countNumber");
-  const message=document.getElementById("finalMessage");
-  box.style.display="block";
-  let count=5;
-  number.textContent=count;
-
-  const timer=setInterval(()=>{
-    count--;
-    if(count>0){
-      number.textContent=count;
-    }else{
-      clearInterval(timer);
-      box.style.display="none";
-      message.style.display="block";
-      message.scrollIntoView({behavior:"smooth",block:"center"});
-      createHearts();
-    }
-  },1000);
-}
-
-function createHearts(){
-  for(let i=0;i<24;i++){
-    const heart=document.createElement("div");
-    heart.textContent=["♥","✦","♡"][i%3];
-    heart.style.cssText=
-      "position:fixed;left:"+Math.random()*100+
-      "vw;bottom:-30px;color:#d8b45a;font-size:"+
-      (14+Math.random()*20)+"px;z-index:10;pointer-events:none;";
-    document.body.appendChild(heart);
-    const duration=2500+Math.random()*2500;
-    heart.animate([
-      {transform:"translateY(0) rotate(0deg)",opacity:1},
-      {transform:"translateY(-100vh) rotate(240deg)",opacity:0}
-    ],{duration:duration,easing:"ease-out"});
-    setTimeout(()=>heart.remove(),duration);
-  }
-}
-</script>
+  <script>
+    const correctPassword = "2311";
+    const gate = document.getElementById("gate");
+    const content = document.getElementById("content");
+    document.getElementById("login").addEventListener("submit", function(e) {
+      e.preventDefault();
+      if (document.getElementById("password").value === correctPassword) {
+        gate.classList.add("hidden");
+        content.classList.remove("hidden");
+      } else {
+        document.getElementById("error").textContent = "Password galat hai. Dobara try karo ❤️";
+      }
+    });
+    const lightbox = document.getElementById("lightbox");
+    const largePhoto = document.getElementById("largePhoto");
+    document.querySelectorAll(".photo img").forEach(img => img.addEventListener("click", () => {
+      largePhoto.src = img.src;
+      lightbox.classList.remove("hidden");
+    }));
+    function closePhoto(){lightbox.classList.add("hidden");largePhoto.src="";}
+    document.getElementById("close").addEventListener("click", closePhoto);
+    lightbox.addEventListener("click", e => {if(e.target === lightbox) closePhoto();});
+  </script>
 </body>
 </html>
-
